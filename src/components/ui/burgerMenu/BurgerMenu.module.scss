@@ -1,0 +1,13 @@
+.BurgerMenu {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  background: #03011f;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}

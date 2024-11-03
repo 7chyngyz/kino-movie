@@ -1,0 +1,47 @@
+.ExploreMovie {
+  padding: 70px 0;
+  width: 100%;
+  background: rgb(4, 21, 45);
+  .content {
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card {
+        img {
+          width: 220px;
+          height: 340px;
+          object-fit: cover;
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        p {
+          font-size: 25px;
+          margin: 10px 0 0;
+        }
+
+        h6 {
+          padding: 10px 0;
+          font-size: 16px;
+          color: rgb(189, 187, 187);
+          margin: 0;
+        }
+      }
+    }
+  }
+}

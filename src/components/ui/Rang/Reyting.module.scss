@@ -1,0 +1,45 @@
+.Reyting {
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    .player {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05); 
+      }
+      .blackPLay,
+      .whitePlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; 
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        &:hover {
+            color: #da2f68;
+        }
+      }
+      .whitePlay {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.3
+        ); 
+      }
+      .blackPLay {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); 
+      }
+    }
+  }
+}

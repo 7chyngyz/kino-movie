@@ -1,0 +1,35 @@
+.ActerList {
+  background: rgb(4, 21, 45);
+  padding: 70px 0;
+  .content {
+    h1 {
+      font-size: 25px;
+    }
+    .acters {
+      display: flex;
+      overflow-x: scroll;
+      gap: 20px;
+      margin-top: 20px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      span {
+        font-size: 16px;
+        opacity: 0.4;
+      }
+    }
+  }
+}

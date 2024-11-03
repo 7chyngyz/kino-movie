@@ -1,0 +1,153 @@
+.Header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding: 15px 0;
+  background-color: rgba(12, 12, 12, 0.13);
+  backdrop-filter: blur(5px);
+  &.active {
+    background: #03011f;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .left {
+    .logo img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    i {
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 0%;
+      transition: 0.3s;
+
+      &:hover {
+        color: #da2f68;
+      }
+    }
+
+    .nav {
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin: 0 15px;
+          .link {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            letter-spacing: 0%;
+            transition: color 0.3s;
+
+            &:hover {
+              color: #da2f68;
+              cursor: pointer;
+              font-weight: 500;
+              line-height: 10px;
+              letter-spacing: 0%;
+              transition: 0.3s;
+            }
+            &.active {
+              color: #da2f68;
+            }
+          }
+        }
+      }
+    }
+
+    .auth {
+      display: flex;
+      margin-left: 20px;
+      .profile {
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+      b {
+        cursor: pointer;
+        border: none;
+        transition: 0.2s;
+      }
+    }
+
+    &.active {
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      z-index: 10;
+      ul {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+      &.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 53px;
+        left: 0; 
+        background: #03011f;
+        width: 100%;
+        height: 50px;
+        z-index: 10;
+      }
+    }
+
+    .menuIcon {
+      display: flex;
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 40px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .auth {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .menuIcon {
+      display: none;
+    }
+  }
+}

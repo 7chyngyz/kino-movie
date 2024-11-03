@@ -1,0 +1,32 @@
+.Trailer {
+  background: rgb(4, 21, 45);
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+    h1 {
+      font-size: 25px;
+    }
+    .trailers {
+      display: flex;
+      overflow-x: scroll;
+      gap: 25px;
+      margin-top: 20px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .trailer {
+        width: 300px;
+        height: 190px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      p {
+        font-size: 17px;
+      }
+    }
+  }
+}
