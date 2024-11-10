@@ -6,7 +6,11 @@ import { useGetTvShowsQuery } from "@/redux/api/discover";
 
 const ExploreShow = () => {
   const router = useRouter();
-  const { data, isLoading } = useGetTvShowsQuery();
+  const { detailsQuery } = useParams();
+  const movieId = Number(detailsQuery);
+  const { data, isLoading } = useGetTvShowsQuery({
+    movie_id: movieId,
+  });
 
   function truncateDescription(
     description: string | null | undefined,

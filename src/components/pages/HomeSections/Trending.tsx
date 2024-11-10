@@ -4,6 +4,13 @@ import scss from "./Trending.module.scss";
 import { useGetTrendingQuery } from "@/redux/api/trending";
 import { useRouter } from "next/navigation";
 
+interface Itrending {
+  id: number;
+  poster_path: string;
+  title: string;
+  release_date: string;
+}
+
 const Trending = () => {
   const [btn, setBtn] = useState<boolean>(true);
   const router = useRouter();
@@ -46,7 +53,7 @@ const Trending = () => {
 
           <div className={scss.cards}>
             {isLoading && <p>Loading...</p>}
-            {data?.results?.map((movie) => (
+            {data?.results?.map((movie: Itrending) => (
               <div
                 onClick={() => router.push(`/details/${movie.id}`)}
                 className={scss.card}

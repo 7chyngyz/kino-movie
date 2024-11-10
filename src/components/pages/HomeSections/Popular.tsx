@@ -4,6 +4,13 @@ import scss from "./Popular.module.scss";
 import { useRouter } from "next/navigation";
 import { useGetPopularQuery } from "@/redux/api/popular";
 
+interface Ipopular {
+  id: number;
+  poster_path: string;
+  title: string;
+  release_date: string;
+}
+
 const Popular = () => {
   const [popular, setPopular] = useState<boolean>(true);
   const router = useRouter();
@@ -52,7 +59,7 @@ const Popular = () => {
 
           <div className={scss.cards}>
             {isLoading && <p>Loading...</p>}
-            {data?.results?.map((movie) => (
+            {data?.results?.map((movie: Ipopular) => (
               <div
                 onClick={() => router.push(`details/${movie.id}`)}
                 className={scss.card}

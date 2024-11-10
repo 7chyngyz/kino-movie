@@ -8,16 +8,18 @@ const ExploreMovie = () => {
   const [discover, setDiscover] = useState<boolean>(true);
   const router = useRouter();
   const { detailsQuery } = useParams();
-  const { data, error, isLoading } = useGetDiscoverQuery({
-    movie_id: Number(detailsQuery),
+
+  const movieId = Number(detailsQuery);
+  const { data, isLoading } = useGetDiscoverQuery({
+    movie_id: movieId,
   });
 
   function truncateDescription(description: string, maxLength: number): string {
     if (description.length <= maxLength) {
-      return description; 
+      return description;
     }
 
-    return description.slice(0, maxLength) + "..."; 
+    return description.slice(0, maxLength) + "...";
   }
 
   return (

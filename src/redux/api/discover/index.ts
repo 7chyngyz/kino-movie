@@ -7,9 +7,10 @@ const api = index.injectEndpoints({
       DISCOVER.GetDiscoverMoviesResponse,
       DISCOVER.GetDiscoverMoviesRequest
     >({
-      query: () => ({
+      query: (params) => ({
         url: `/discover/movie`,
         method: "GET",
+        params,
       }),
       providesTags: ["discoverMovie"],
     }),

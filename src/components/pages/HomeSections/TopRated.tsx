@@ -4,6 +4,13 @@ import scss from "./TopRated.module.scss";
 import { useRouter } from "next/navigation";
 import { useGetTopRatedQuery } from "@/redux/api/toprated";
 
+interface Itoprated {
+  id: number;
+  poster_path: string;
+  title: string;
+  release_date: string;
+}
+
 const TopRated = () => {
   const [topRated, setTopRated] = useState<boolean>(true);
   const router = useRouter();
@@ -52,7 +59,7 @@ const TopRated = () => {
 
           <div className={scss.cards}>
             {isLoading && <p>Loading...</p>}
-            {data?.results?.map((movie) => (
+            {data?.results?.map((movie: Itoprated) => (
               <div
                 onClick={() => router.push(`details/${movie.id}`)}
                 className={scss.card}

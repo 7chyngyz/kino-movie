@@ -47,8 +47,7 @@ const Header = () => {
                 ))}
               </ul>
             </nav>
-            <i>
-            </i>
+            <i></i>
             <div className={scss.menuIcon} onClick={goToMenu}>
               <>
                 <BurgerButton />
@@ -58,14 +57,12 @@ const Header = () => {
             <div className={scss.auth}>
               {session ? (
                 <>
-                  <button onClick={() => signOut()} className={scss.profile}>
-                    <img src={session.user?.image!} alt="" />
-                  </button>
+                  {/* <button onClick={() => signOut()} className={scss.profile}>
+                    <img src={session.user?.image!} alt="" /> */}
+                  {/* </button> */}
                 </>
               ) : (
-                <>
-                  <b onClick={() => signIn("google")}>Login</b>
-                </>
+                <>{/* <b onClick={() => signIn("google")}>Login</b> */}</>
               )}
             </div>
           </div>
